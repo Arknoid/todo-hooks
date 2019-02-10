@@ -6,6 +6,7 @@ import { FaStar as Star } from "react-icons/fa";
 import styled from "styled-components";
 
 const Li = styled.li`
+  list-style: none;
   font-size: 1.2em;
   background-color: ${props => (props.done ? "#eee" : "#fff")};
   margin: 0.3em 0 0.3em 0.5em;
@@ -37,7 +38,6 @@ const Task = ({
   onTaskDelete,
   onTaskFav
 }) => {
-
   const Favorite = fav ? Star : StarEmpty;
 
   return (
