@@ -10,7 +10,7 @@
       "warn",
       {
         "semi": true,
-        "singleQuote": true,
+        "singleQuote": false,
         "bracketSpacing": true
       }
     ],
