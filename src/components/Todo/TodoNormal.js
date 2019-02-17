@@ -1,12 +1,8 @@
 import React from "react";
-
 import Form from "../Form";
 import Counter from "../Counter";
 import Tasks from "../Tasks";
 import styled, { createGlobalStyle } from "styled-components";
-// data
-import initialTasks from "../../data/tasks";
-
 /*
 * Styles
 */
@@ -29,7 +25,7 @@ class App extends React.Component {
    * State
    */
   state = {
-    tasks: initialTasks,
+    tasks: [],
     input: ""
   };
 

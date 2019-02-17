@@ -1,11 +1,9 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
 import Form from "../Form";
 import Counter from "../Counter";
 import Tasks from "../Tasks";
 import styled, { createGlobalStyle } from "styled-components";
-// data
-import initialTasks from "../../data/tasks";
+import axios from "axios";
 
 /*
 * Styles
@@ -25,9 +23,18 @@ const AppWrapper = styled.div`
  * Code
  */
 
-const App = () => {
-  const [tasks, setTasks] = useState(initialTasks);
+const Todo = () => {
+  const [tasks, setTasks] = useState([]);
   const [input, setInput] = useState("");
+
+  // Equivalent to Component did mount
+  useEffect(() => {
+    axios
+      .get(process.env.REACT_APP_FUNCTIONS_BASE_URL + "/tasks")
+      .then(response => {
+        setTasks(response.data);
+      });
+  }, []);
 
   const addTask = () => {
     if (input.length < 1) {
@@ -105,4 +112,4 @@ const App = () => {
 /**
  * Export
  */
-export default App;
+export default Todo;

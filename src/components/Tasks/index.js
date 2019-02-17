@@ -13,7 +13,6 @@ const Tasks = ({ list, ...props }) => (
 
 Tasks.propTypes = {
   list: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
-  actions: PropTypes.objectOf(PropTypes.func.isRequired).isRequired
 };
 /**
  * Export
